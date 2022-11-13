@@ -1,0 +1,23 @@
+Modifier le fichier editeurDeTexte avec la commande nano, ecriver dedans (pour sauvegarder control + o (raccourcis clavier) puis la touche entrée, une fois sauvegardé control + x pour quitter l'éditeur): 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+
+Une fois cette ligne de latin écrite et sauvegarder, modifier ce fichier a nouveau via la commande vi pour ajouter cette nouvelle ligne(echap pour sortir de la vue normale, 
+i pour entrer dans la vue insertion) (depuis la vue normale, une fois vos modifications faîtes ecrivez :wq puis faite entrer):
+
+Ut enim ad minim veniam, quis nostrud
+
+
+Réponse :
+Pas de commande en particulier:
+nano <nom_de_votre_fichier>
+(ecrire du texte)
+ctrl + o puis entrée, puis ctrl + x
+
+ou 
+
+vi <nom_de_votre_fichier>
+i (mode insertion)
+(ecrire du texte)
+echap 
+:wq

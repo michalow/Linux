@@ -1,0 +1,30 @@
+nanXscript.sh
+Copie un template et l'envoie dans un dossier script
+Le rends executable 
+puis l'ouvre avec un editeur de texte à la ligne 8
+
+Yscript.sh
+
+Ecrivez une fonction qui :
+Copie un template et l'envoie dans un dossier script
+le fichier créer doit contenir une fonction nommé en fonction de l'arg 1 passé
+Le rends executable 
+puis l'ouvre avec un editeur de texte à la ligne de la fonction
+
+Zscript.sh
+
+Intégrer la fonction précédente à votre .bashrc.
+Nommé cette fonction mnst
+Depuis votre terminal, vous devez pouvoir appelé cette fonction 
+et lui passer en arg1 le nom du fichier qui sera également le nom la première fonction 
+avec la première lettre en majuscule
+
+Wscript.sh
+
+Intégrer la fonction précédente à votre .bashrc.
+Nommé cette fonction smnst
+Depuis votre terminal, vous devez pouvoir appelé cette fonction
+et lui passer en arg1 le nom du fichier qui sera également le nom de la première fonction
+avec la première lettre en majuscule  UNIQUEMENT si un seule arg est envoyé.
+Si d'autres arguments sont envoyées arg2, arg3 etc... seront des nouvelles fonctions 
+ajouté directement dans le script

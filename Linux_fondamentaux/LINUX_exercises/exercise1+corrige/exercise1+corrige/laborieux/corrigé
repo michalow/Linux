@@ -1,0 +1,19 @@
+Vous devez créer l'arborescence affiché dans le fichier arbo dans un noubeau dossier appelé "travail"
+
+
+ressource:
+man mkdir
+google
+diapo 49,66
+
++ supp si tout tiens en une commande multiligne
+
+Réponse:
+mkdir -p chemin1/chemin2/chemin3 chemin2/chemin3/chemin4 chemin5/chemin6/chemin7
+
+
+Vous pouviez utilisé \ cela permet de faire des commandes multilignes
+
+mkdir -p chemin1/chemin2/chemin3  \
+chemin2/chemin3/chemin4           \
+chemin5/chemin6/chemin7

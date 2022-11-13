@@ -1,0 +1,4 @@
+GNU RAND UNIFIED BOOTLOADER version 2 GRUB 2 - un logiciel permettant de charger 
+le système d'exploitation
+version uEFI de GRUB 2, installé en mode uEFI
+Bootloader

@@ -1,0 +1,130 @@
+==> 10script.sh <==
+#!/bin/bash
+# ------------------------------------------------------------------
+# [Author]             Thibault Marchal
+# [Description]            Vérifie que les fichiers passsés en arg existe
+#
+# ------------------------------------------------------------------
+while (( "$#" ))
+do
+     if [ -f $1 ]
+     then
+         echo "Le fichier : ${1} existe bien !" 
+     fi
+ shift
+ done
+ ==> 1script.sh <==
+ #!/bin/bash
+ # ------------------------------------------------------------------
+ # [Author]             Thibault Marchal
+ # [Description]            Affiche le dossier courrant
+ #
+ # ------------------------------------------------------------------
+ pwd
+ ==> 2script.sh <==
+ #!/bin/bash
+ # ------------------------------------------------------------------
+ # [Author]             Thibault Marchal
+ # [Description]            Affiche l'utilisateur connecté
+ #
+ # ------------------------------------------------------------------
+ echo $(whoami)
+ whoami
+ echo $USER
+ echo "$USER"
+ ==> 3script.sh <==
+ #!/bin/bash
+ # ------------------------------------------------------------------
+ # [Author]             Thibault Marchal
+ # [Description]            Affiche les chemins de paths avec un retour a la ligne
+ #
+ # ------------------------------------------------------------------
+ 
+ echo $PATH | tr ":" "\n"
+ ==> 4script.sh <==
+ #!/bin/bash
+ # ------------------------------------------------------------------
+ # [Author]             Thibault Marchal
+ # [Description]            interactif demande age et repond #1
+ #
+ # ------------------------------------------------------------------
+ 
+ main (){
+ 
+     read -p "Quel est votre Age ? " question
+     
+     if [ $question -gt 5 -a $question -lt 120 ] 
+         then
+         echo "Bonjour humain avec : " $question 
+ 
+     elif [ $question -lt 5 ] 
+         then
+         echo "Bonjour humain, navré vous etes trop jeunes du haut de vos  " $question 
+     elif [ $question -gt 120 ] 
+         then
+         echo "Bonjour humain, navré vous etes trop vieux du haut de vos  " $question 
+     fi
+ }
+ 
+ ==> 5script.sh <==
+ #!/bin/bash
+ # ------------------------------------------------------------------
+ # [Author]             Thibaule Marchal
+ # [Description]            Interactif demande age et repond #2
+ #
+ # ------------------------------------------------------------------
+ 
+ read -p "Quel est votre Age ? " question
+ 
+ if [ $question -ge 5 -a $question -le 120 ] 
+     then
+     echo "Bonjour humain avec : " $question 
+ 
+ elif [ $question -le 5 ] 
+     then
+     echo "Bonjour humain, navré vous etes trop jeunes du haut de vos  " $question 
+ elif [ $question -ge 120 ] 
+     then
+     echo "Bonjour humain, navré vous etes trop vieux du haut de vos  " $question 
+ fi
+ 
+ if [ $question -ge 5 -a $question -le 16 ] 
+     then
+     echo "Bonjour jeune humain" 
+ 
+  elif [ $question -ge 17 -a $question -le 60 ] 
+      then
+      echo "Bonjour humain " 
+  
+  elif [ $question -ge 61 -a $question -le 120 ]         
+      then
+      echo "Bonjour papi "     
+  fi
+  
+  ==> 6script.sh <==
+  #!/bin/bash
+  # ------------------------------------------------------------------------------
+  # [Author]             Thibault Marchal
+  # [Description]        Rend executable fichiers commencant par un chiffre et qui finis par script.sh  
+  #
+  # ------------------------------------------------------------------------------
+  
+  ls | egrep "(\d*)script.sh" | xargs chmod +x
+  ==> 7script.sh <==
+  #!/bin/bash
+  # --------------------------------------------------------------------------
+  # [Author]             Thibault Marchal
+  # [Description]        Recherche par mot clé dans les repertoires de PATH 
+  #
+  # --------------------------------------------------------------------------
+  
+  
+  if [ $# -eq 0 ]
+  then
+      echo $PATH | tr ":" "\n"
+  fi 
+  
+  if [ $# -ge 1 ]
+  then
+      echo $PATH | tr ":" "\n" | xargs ls | grep $1 --color
+  fi

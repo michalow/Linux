@@ -1,0 +1,29 @@
+Est-il possible de faire une copie d'un répertoire 
+et de l'ensemble de ses sous-répertoires en une seule ligne de commande ?
+
+Si oui laquelle ?
+
+cp -R
+
+Est-il possible de déplacer un répertoire 
+et l'ensemble de ses sous-répertoires en une seule ligne de commande ?
+
+Si oui laquelle ?
+
+mv
+
+Ensuite Copié l'ensemble du contenu et uniquemont son contenue du dossier travail.
+Collé le ensuite dans un nouveau dossier copieDeplace
+
+Faîte un ls -l du dossier copieDeplace.
+Faîte un ls -l du dossier travail.
+
+Que constatez-vous ?
+
+Ensuite déplacé l'ensemble du contenu et uniquement son contenue du dossier travail 
+vers un nouveau dossier deplaceCopie.
+
+Faîte un ls -l du dossier deplaceCopie.
+Faîte un ls -l du dossier travail.
+
+Que constatez-vous ?

@@ -1,0 +1,39 @@
+echo $PATH
+si vous taper une commande dont l’emplacement n’est pas spécifié dans la variable $PATH,
+le shell vous alors que cette commande est introuvable et vous devrez alors taper la commande
+en indiquant au shell son chemin.
+Les répertoires les plus courants qui contiennent des programmes exécutables sont :
+ /bin, /sbin, /usr/sbin, /usr/local/bin and /usr/local/sbin
+
+Comment ajouter un répertoire à la variable $PATH
+Raisons pour lesquelles on veut ajouter un répertoire au $PATH :
+-certains programmes peuvent être installés à différents emplacements
+-vous souhaitez avoir un répertoire dédié pour vos scripts personnels 
+et vous souhaitez les exécuter sans spécifier le chemin absolu vers ces fichiers exécutables
+
+Supposant que vous avez créé des scriptes et vous les mettez dans le répertoire Scripte
+situé dans votre répertoire home, voici comment ajouter ce répertoire au variable $PATH :
+
+#export PATH="$HOME/Scripte:$PATH"
+
+Source : openclassroom
+
+home bashrc
+
+$PATH
+usr/local/bin
+le shell cherche si la cmd est répertoriée dans le répertoire courant (.) 
+sino il va chercher dans les répertoires qui sont référencés dans la variable PATH
+Pour ajouter le script dans la variable PATH (pour qui soit accessible partout) il faut depuis le répertoire 
+où il y a le script taper dans le terminal 
+export PATH=$PATH:/home/nat
+s'il a été bien ajouté il faut vérifier avec echo $PATH
+tous les fichiers d'exécution qui se trouve dans le répertoire nat pouvont être appelé de n'importe quel endroit 
+mais pour cette session d'utilisateur
+(pour tous les utilisateurs il faut modifier le fichier bashrc) 
+explication :
+https://openclassrooms.com/fr/courses/7274161-administrez-un-systeme-linux/7529311-lancez-des-commandes-sous-bash
+si on n'ajoute pas la cmd au PATH elle est accessible uniquement en local donc pour l'exécuter il faut donner 
+le chemin absolu ou être dans le répertoire de cette cmd
+/home/nat/cmdtest
+./cmdtest (on est dans le répertoire, . c'est le répertoire courant)

@@ -1,0 +1,20 @@
+Créer un fichier vide avec touch 
+Faîte un file de touch
+
+Que constatez-vous ?
+empty
+
+saississez cette commande:
+
+echo "bonjour"
+
+Que constatez-vous ?
+
+
+Faîte un echo "bonjour" > a.txt
+
+Que constatez-vous ?
+
+Faite un file de a.txt 
+Que constatez-vous ?
+text

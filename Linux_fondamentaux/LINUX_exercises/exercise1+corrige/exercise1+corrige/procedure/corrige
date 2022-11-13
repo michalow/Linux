@@ -1,0 +1,10 @@
+Dans ce dossier:
+Créez un fichier premiertexte contenant une ou deux phrases.
+Visualisez le contenu de premiertexte sans l'éditer.
+Quelle est la taille de premiertexte ?
+Éditez PREMIERTEXTE. Que constatez-vous ?
+
+
+Via ls du <nom_du_ficher> puis la modification de son contenue.
+
+Vous allez remarquer l'évolution de la taille du fichier

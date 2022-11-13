@@ -1,0 +1,28 @@
+6sript.sh
+
+Ecrivez un script qui rend exécutable tous les fichiers qui réponde à cette syntaxe [0-9]script.sh dans le dossier courant
+Créer un alias qui exécute ce script
+
+
+7script.sh
+
+Retourne la liste des fichiers et dossier de tous les emplacements du PATH
+Si Arg1 est vide même comportement que 3script.sh 
+Si Arg1 n'est pas vide, affiche uniquement dans la liste ce qui correspond au motif de recherche passé (grep)
+
+
+8script.sh
+
+Ecrivez un script qui retourne tous les utilisateurs qui ont un mot de passe crypté sur le systèmes
+
+
+9script.sh
+
+Ecrivez un script qui vérifie si le ou les fichiers données en arguments existe, avec la commande test
+
+10script.sh 
+
+Ecrivez un script qui vérifie si le ou les fichiers données en arguments existe, avec une condition if
+
+11script.sh
+Vérifier que votre script 6 fonctionne toujours 

@@ -1,0 +1,101 @@
+fdisk /dev/.. - pour manipuler les partitions (gdisk pour GPT)
+
+mkfs formater et créer un système de fichier - make file system (ext4, NTFS, FAT)
+
+lsblk (list bloc devices) - afficher les périphériques bloc : disques dur, SDD, RAM et les partitions
+(les fichiers de périphérique de bloc sont dans le /dev)
+
+blkid (bloc id) infos sur le système de fichiers et l'UUID
+
+Pour séparer certaines types de données, par exemples les données systèmes, des données utilisateurs 
+(documents Word, Images, PDF), on peut créer des partitions de disque.
+Cela permet d’organiser le stockage des données au sein d’un disque dur ou d’un SSD.
+
+Les systèmes d’exploitation créent aussi des partitions systèmes.
+Par exemple la partition EFI communs à tous les OS sur les PC avec des BIOS UEFI 
+ou la partition de récupération dans le cas de Windows 10.
+Le système d’exploitation peut aussi créer des partitions pour son fonctionnement, 
+c’est notamment le cas avec la partition EFI ou la partition de récupération de Windows.
+
+Une partition de disque se délimite par un secteur de début et de fin.
+Ces informations de partition sont stockées dans la table de partition.
+
+Puis une fois formatée, la partition est accessible pour l’utilisateur afin d’y copier, 
+créer des fichiers ou dossiers.
+Cela se traduit par une lettre de lecteur dans Windows accessibles depuis l’explorateur de fichiers.
+Dans Linux, c’est un point de montage, par exemple dans /mnt ou /media.
+
+Après la création de la partition de disque, il faut la formater pour y préparer 
+le système de fichiers afin de pouvoir y stocker ces derniers.
+
+Chaque système d’exploitation utilise un système de fichiers différents.
+Par exemple, Windows utilise NTFS (New Technology File System) et FAT32 ou xFAT pour 
+les médias amovibles.
+Linux lui utilise ext4.
+
+GPT (GUID Partition Table) qui fonctionne sur les BIOS UEFI (type de disque)
+UEFI (Unified Extensible Firmware Interface) : Nouveau système présent sur les ordinateur, 
+il s’agit d’un logiciel intermédiaire entre le micrologiciel (firmware) 
+et le système d’exploitation (OS) d’un ordinateur. 
+EFI permet d’amorçage du système d’exploitation sur des disques GPT.
+CSM (Compatibility Support Module) permet de rendre le démarrage MBR possible sur un ordinateur UEFI.
+
+Amorçage - la procédure de démarrage, boot
+
+POWER-ON
+Au moment de la mise sous tension d'un ordinateur, le micrologiciel de l'ordinateur 
+(BIOS, système EFI, OpenFirmware, etc.) exécute immédiatement et automatiquement une routine 
+de contrôle de la machine. L'ordinateur détecte les divers périphériques qui sont raccordés 
+à l'ordinateur et détermine certaines de leurs caractéristiques basiques. Une fois cette détection 
+terminée, le micrologiciel de l'ordinateur passe le relais à un logiciel plus complexe : 
+le chargeur d'amorçage.
+Un ordinateur disposant de plusieurs périphériques peut avoir plusieurs chargeurs d'amorçages 
+installés chacun sur un périphérique différent. Afin de déterminer à quel chargeur d'amorçage 
+le micrologiciel doit passer le relais, il se sert d'un paramètre de sa configuration : 
+l'ordre d'amorçage.
+
+CHARGEUR D'AMORCAGE
+Un chargeur d'amorçage est un logiciel qui exécute le démarrage d'un système d'exploitation.
+Sur Linux défaut c'est GRUB 2. 
+
+***
+
+Le RAID est un ensemble de techniques de virtualisation du stockage permettant de 
+répartir des données sur plusieurs disques durs afin d'améliorer soit les performances, 
+soit la sécurité ou la tolérance aux pannes de l'ensemble du ou des systèmes.
+3 types principaux de RAID:
+RAID 0
+RAID 1
+RAID 5 (ou RAID5 + hot spare)
+installation mdadm -> apt install -y mdadm
+creation RAID -> mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc
+(Un message peut prévenir si on compte mettre /boot sur le RAID qu'il faut utiliser --metadata=0.90.s
+On peut valider la création avec y.)
+(array - table)
+(version courte mdadm --create /dev/md0 -l1 -n2 /dev/sdb /dev/sdc)
+mdadm --detail /dev/md0 (voir le détail de RAID)
+mkfs.ext4 /dev/md0 (formatage de volume RAID comme une partition)
+mount /dev/md0 /r (on monte le volume RAID comme une partition; /r c'est un répertoire créer avant 
+mkdir /r)
+récupérer UUI (UUID = Universal Unique Identifier) pour ajouter au fichier fstab
+lbkid | grab md0 >> /etc/fstab (ou cmd lsblk -f, en root)
+Le fichier fstab (situé dans /etc/fstab) est le fichier de configuration (file systems table)
+qui contient les informations sur le montage des systèmes de fichiers.
+fstab veut d'ailleurs dire File System Table
+2ème colonne : le point de montage pour une partition qui n'a pas comme swap il faut mettre 'none'
+3ème type de fichier : ext2, ext3, ext4, reiserfs, xfs, jfs, smbfs, btrfs, vfat, ntfs, swap
+4ème les options : defaults (paramètrage par défaut, mais il y en a pleins d'autres)
+5ème dump (sauvegarde ou pas) la plupart de temps 0 pas de backup
+6ème pass la priorité de vérification des erreurs éventuelles du système de fichiers au démarrage
+(root 1 à la racine partition principale, les autres 2, swap 0)
+Pour garder la configuration du nom (ici md0) il est possible d'ajouter les infos du RAID dans 
+/etc/mdadm.conf -> ARRAY /dev/md0 UUID=032e4ab2:53ac5db8:98806abd:420716a5
+Si malgré tout le md0 se nomme md127 après un redémarrage, et que le fichier mdadm.conf est 
+bien renseigné, il est peut être nécessaire de regénérer le fichier initramfs.
+reboot (cmd)
+
+(fichier /etc/mtab contient la liste des montages effectués)
+
+**
+SCSI small computer system interface -  est un standard définissant un bus informatique 
+permettant de relier un ordinateur à des périphériques

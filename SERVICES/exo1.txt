@@ -1,0 +1,18 @@
+Exercise sur Grub :
+
+1:
+Changer le fond d'écran de grub
+[10:19]
+
+/etc/default/grub
+
+2:
+Sécuriser l'accès au shell minimaliste de grub
+[10:19]
+
+On accède aussi au mode rescue de GRUB depuis la page de démarrage.
+La distribution Ubuntu ou Debian y a donne accès par la touche ESC ou Maj.
+Puis on appuie sur la touche c pour ouvrir le mode ligne de commandes de GRUB
+
+3:
+Sécuriser l'accès à la menu entry du recovery mode

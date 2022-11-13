@@ -1,0 +1,20 @@
+afficher les doublons du fichier compterMoi en ignorant "la casse" accompagné de leur occurence
+
+
+Vous devez obtenir ce résultat :
+
+      1 Compter
+     12 DE
+     12 doublOns
+     12 LE
+     12 nombre 
+     10 ompter
+      1 Xompter
+
+
+
+ressource:
+Diapo 115
+google
+
+sort compterMoi | uniq -ic

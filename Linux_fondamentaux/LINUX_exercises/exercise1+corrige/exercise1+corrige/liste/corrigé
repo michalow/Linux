@@ -1,0 +1,43 @@
+
+Q:Lister le contenu du répertoire /etc et envoyer le résultat dans un fichier "etcResultat"
+Réponse:
+```
+ls /etc > etcResultat
+```
+
+Q:Lister de manière détaillée le contenu du répertoire /etc et envoyer le résultat dans un fichier "etcResultat2".
+
+Réponse:
+```
+ls -l /etc > etcResultat2
+```
+Q:Le fichiers nommés "passwd" est-il présent dans /etc, envoyer le résultat dans un fichier "passwdResultat"
+
+Réponse:
+peut importe la commande tout ce qui prouve que le fichier est présent
+```
+ls /etc/passwd > passwdResultat
+ou
+find /etc -name passwd -type f > passwdResultat
+```
+
+Q:Lister le contenu du répertoire /dev avec ces fichiers cachés et envoyer le résultat dans un fichier "cachéDev"
+Réponse:
+
+```
+ls -a /dev > cachéDev
+```
+Q:Lister le contenu du fichier /etc/shadow sans la 2 ème collone et envoyer le résultat dans un fichier "secretMotDePasse".
+Réponse:
+```
+cat /etc/shadow | cut -d : -f 1,3- > secretMotDePasse
+
+```
+
+Q:Lister les 6 premiers caractères du fichier /etc/passwd et envoyer le résultat à la suite du fichier "secretMotDePasse".
+Réponse:
+```
+cat /etc/passwd | cut -C 6 >> secretMotDePasse
+ou était aussi accepté
+head -n 1 /etc/passwd | cut -C 6 >> secretMotDePasse
+```

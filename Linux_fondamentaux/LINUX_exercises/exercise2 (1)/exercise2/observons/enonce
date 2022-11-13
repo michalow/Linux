@@ -1,0 +1,13 @@
+que retourne
+ls -al /etc
+
+-liste détaillée -l long, -a fichiers cachés
+
+que retourne
+ls -al /etc | tr -s [:blank:] " "
+
+tr -s redruit l'espace 
+
+Quel est la différence, quel est l'interet ?
+
+réduire les espace pour cmd cut parce que si on utilise cut -f field -> ça affiche avec des espaces en plus  

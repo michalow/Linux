@@ -1,0 +1,17 @@
+Faîte:
+
+cat --help
+
+Que vous affiche t-il ?
+
+which cat
+
+Que vous affiche t-il ?
+
+strings $(which cat)
+
+Que vous affiche t-il ?
+
+Que pouvez-vous en conclure sur l'origine du retour de : 
+
+cat --help

@@ -1,0 +1,45 @@
+su - -> switch user, si c'est root ça change ~ /
+sudo su -> switch to root, superutilisateur
+$ utilisateur sans privilèges
+# utilisateur avec privilèges
+
+shutdown -h now
+
+root /home cd nat
+ls -la -> .bashrc .profile
+
+si on est à la racine / ou dans le sous-dossier de ~ cd sans rien permet de se positionner dans son dossier ~
+
+tmux?
+FHS - file hierarchy system
+
+bin - binary, binaire, basics function is store there (ls, cat)
+sbin - system binary, for administrator use
+boot (efi, grub)
+cdrom
+dev - devices (disks SDA, SDB et partition SDA1, SDA2)
+etc - configuration system (apt -> sources.list list of sources)
+media - automatically mounted drives like USB stick, external hard drive
+mnt - mount (mounted storage devices manually)
+opt - optional folder (manually installed software, virtualbox guest additions)
+proc - system processes and resources 
+cat /proc/cpuinfo
+cat /proc/uptime (uptime système)
+vendor ID VID un numéro unique pour chaque pièce de l'ordi, identifiant de constructeur
+root - root users home folder (unlike a user's home folder it)
+run - everything from here is gone when system reboot or shut down (tempfs file system)
+srv - service directory where service data is stored
+sys - system folder, interacte with kernel
+tmp - temporary directory
+usr - unix system resources, user application space where applications will be installed, 
+there are folders like bin, sbin, lib 
+(not essential for the basic system operation like bin and sbin used by administrator)
+var - variable directory
+home - each user has its own folder inside of it (.cache, .config, .local, 
+application like gimp)
+
+
+
+
+type cat (info sur la cmd cat)
+cat est haché (usr bin cat)

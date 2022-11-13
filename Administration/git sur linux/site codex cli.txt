@@ -1,0 +1,1 @@
+https://github.com/microsoft/Codex-CLI/blob/main/Installation.md#bash-instructions

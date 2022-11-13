@@ -1,0 +1,154 @@
+
+1- 
+
+Afficher ce qui n'est pas caché dans le dossier /etc
+
+ls /etc
+
+
+2-
+
+Afficher tout ce que contient le dossier /etc
+ls -a
+
+A quoi correspond "." ".." ?
+
+.. pour rémonter dans le dossier parent si on est dans le dossie /etc et on veut sortir des là
+pour retourner sur la racine  (cd ..)
+. rentrer dans le dosier enfant, dossier courant 
+p.ex si on est sur la racine et on veut accèder au dossier etc ./etc
+
+3- 
+
+Déplacer vous dans le dossier /etc 
+Liser le fichier passwd 
+Quel est le séparateur de champ ?
+
+:
+
+4-
+
+Déplacer vous dans le dossier /etc 
+Copier le fichier /etc/shadow en /etc/shadow.bkp
+A quoi cela peut servir ?
+
+cp shadow shadow.bkp
+backup pour sauvegarder
+après si on veut remplace le fichier modifier
+mv shadow.bkp shadow
+
+5- 
+
+Déplacer vous dans le dossier /etc
+Afficher le fichier shadow sans la deuxième collone
+
+cd etc | cut -d: -f1,3- shadow 
+
+6- 
+
+Déplacer vous dans le dossier etc
+Créer un dossier exercice, faite en sorte que:
+Son propriétaire à tous les droits dessus 
+Son groupe permet seulement son exécution 
+Les autres ne peuvent uniquement lire et écrire
+
+mkdir exercise | chmod u+wrx, g+x, o+wr
+mkdir Exercise
+ls -la Exercise (drwxr-xr-x)
+chmod g-r, o+wr-x
+
+7- 
+
+Déplacer vous dans le dossier var
+Rechercher tous les fichiers qui finissent par .log à un profondeur max de 1
+Faite en sorte que la recherche ne retourne pas d'erreur
+
+cd /varlog
+find . -maxdepth 1 -type f -name "*.log" 2> /dev/null
+find . -> dans le dossier courant
+maxdepth 1 (dans le dossier, pas sous-dossiers)
+
+8- 
+
+Déplacez vous dans le dossier de votre utilisateur
+Afficher uniquement le nombre de ligne du fichier .bashrc
+
+su vboxuser
+cd .. (j'étais dans le dossier var) ça met sur la racine / et avec cd on va dans 
+le dossier utilisateur ~ (vboxuser@Debian:~$) 
+
+wc -l .bashrc
+(113 lignes)
+wc -l .bashrc | cut -d " " -f 1
+
+9- 
+
+Déplacez vous dans le dossier de votre utilisateur
+Afficher uniquement le nombre de bytes du fichier .bashrc
+
+(od .bashrc pour afficher les bytes)
+wc -c .bashrc 
+(3526 bytes)
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Script1 -
+
+Toujours depuis le dossier utilisateur
+Créer un dossier script2 
+Déplacer vous dedans, créer le script 1script.sh
+
+L’exécution du script doit retourner :
+Bonjour le monde !
+
+mkdir script2
+cd script2
+touche 1script.sh
+nano 1script.sh
+(#! bin/bash 
+echo " ")
+
+Script2-
+
+Créer le script 2script.sh dans le dossier script2
+L'execution du script doit retourner :
+Bonjour <nom_de_lutilisateur_connecte> !
+
+(on parle d'une valeur dynamique)
+read -p " " var
+$var
+"Bonjour $USER"
+"Bonjour" &&id -nu
+
+Script3-
+
+Créer le script 3script.sh dans le dossier script2
+Il doit vous retourner tous les chemins du PATH, ligne après ligne (modifié)
+[13:35]
+>
+
+echo $PATH | tr ':' '\n'
+tr remplace : par retour à la ligne
+
+Script4-
+
+Toujours depuis le dossier utilisateur
+Créer un dossier script si il n'existe pas déjà
+Créer un script helloWorld.sh
+Faite en sorte que son execution affiche "Hello World"
+Ajouter le chemin vers le dossier script dans votre $PATH
+Lancer un nouveau terminal et exécuter votre script juste en tapant:
+helloWorld.sh
+>
+
+mkdir script (j'ai déjà le dossier script)
+
+
+Yscript.sh
+
+Ecrivez une fonction qui :
+Copie un template et l'envoie dans un dossier script
+le fichier créer doit contenir une fonction nommé en fonction de l'arg 1 passé
+Le rends executable 
+puis l'ouvre avec un editeur de texte à la ligne de la fonction (modifié)
+
+Envoyer un message dans #général

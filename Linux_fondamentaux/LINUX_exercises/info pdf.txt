@@ -1,0 +1,10 @@
+Ctrl A -> déplace un courseur au début de la cmd
+Ctrl E -> end à la fin de la cmd
+Ctrl L -> clear
+Ctrl R -> historique
+Tab -> propose la fin de la phrase
+Tab tab -> plus de propositions
+
+which - affiche le répertoire du programme
+
+& l'espertuette, en ang ampersand, remplace "et"

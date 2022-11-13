@@ -1,0 +1,130 @@
+Execices
+Ex 1
+#! /usr/bin/bash ## Le shebang page 13
+
+export PS4='Line $LINENO: ' # Par default le mode debug va vour retourner la valeur de PS4 (echo $PS4), pour la changer par le numéro de ligne, il faut indiquer cette commande
+
+
+echo "Hello World !" # affiche Hello World ! dans le stdout
+
+Ex2
+#! /usr/bin/bash  ## Le shebang page 13
+export PS4='Line $LINENO: ' ## Par default le mode debug va vour retourner la valeur de PS4 (echo $PS4), pour la changer par                              
+## le numéro de ligne, il faut indiquer cette commande
+
+
+echo "Hello World ?" # affiche Hello World ? dans le stdout
+
+Ex3
+#! /usr/bin/bash ## Le shebang page 13 (diapo)
+
+echo "programme> Hello"
+echo "programmeQuiAttend> Quel est votre prénom ?"
+read -p "programmeQuiAttend> " PRENOM_ATTENDU ## écris dans stdout et attend la réponse de l'utilisateur
+echo "programme> Bonjour $PRENOM_ATTENDU"     ## echo du script et utilisation de la variable qui vient d'être définie par la                                               
+## réponse de l'utilisateur
+
+Ex4
+#! /usr/bin/bash
+export PS4='Line $LINENO: '
+
+echo "programme> Hello"
+echo "programme> Quel est votre prénom ?"
+echo "programmeQuiAttend> Quel est votre prénom ?"
+read -p "programmeQuiAttend> " PRENOM_ATTENDU ## écris dans stdout et attend la réponse de l'utilisateur
+echo "programme> Bonjour $PRENOM_ATTENDU" ## echo du script et utilisation de la variable qui vient d'être définie par la  ## réponse de l'utilisateur
+echo "programme> Vous voullez qu'on continue ? (O:oui, N:non)" ## pose une question
+
+Ex5
+#! /usr/bin/bash
+export PS4='Line $LINENO: '
+
+## on crée une fonction qui va gérer ce que peut retourner l'utilisateur
+## Si il n'indique pas une condition pris en compte, la fonction se rappele toute seule via la case *)
+
+question_demande(){
+  
+    case $QUESTION in
+    
+      O)
+        # si utilisateur répond O
+        echo "programmeHeureux> Avec plaisir !"        ;;
+    
+      N)
+        # si utilisateur répond N
+        echo "programmeTriste> Dommage à la prochaine !"        ;;
+      o)
+        # si utilisateur répond o
+        echo "programmeHeureux> Avec plaisir !"        ;;
+    
+      n)
+        # si utilisateur répond n
+        echo "programmeTriste> Dommage à la prochaine !"        ;;
+    
+      Oui)
+        # si utilisateur répond Oui
+        echo "programmeHeureux> merci l'ami !"        ;;
+      oui)
+        # si utilisateur répond oui (attention ce bloc logique est sensible à la casse ! (a != A)(a n'égale pas à A)
+        echo "programmeHeureux> merci l'ami !"        ;;
+    
+      Non)
+        # si utilisateur répond Non
+        echo "programmeTriste> J'espere vous revoir"        ;;
+      non)
+        # si utilisateur répond non
+        echo "programmeTriste> J'espere vous revoir"        ;;
+      *)
+        # si utilisateur répond autre chose
+        echo "programmeTriste> désolé je n'ai pas compris"
+        echo "programme> Vous voullez qu'on continue ? (O:oui, N:non)"
+        read -p "programmeQuiAttend> " QUESTION
+        question_demande        ;;
+    esac  
+
+}   
+
+Ex
+## Les premières lignes lancés par le script lors de son lancement
+echo "programme> Hello"
+echo "programmeQuiAttend> Quel est votre prénom ?"
+
+
+## la première interactivité avec l'utilisateur
+read -p "programmeQuiAttend> " PRENOM_ATTENDU
+
+
+## La première réponse du programme
+echo "programme> Bonjour $PRENOM_ATTENDU"
+echo "programme> Vous voullez qu'on continue ? (O:oui, N:non)"
+
+
+## Seconde intéractivité avec l'utilisateur et démarre la fonction question_demande
+read -p "programmeQuiAttend> " QUESTION
+question_demande                       ## on appelle la fonction, écrite plus haut
+
+Ex X
+#! /usr/bin/bash
+export PS4='Line $LINENO: '
+
+## On envoie le stdout des 5 commandes les plus utilisé dans notre bash_history
+## A noté que la cmd history fonctionnait aussi, c'est surrement un meilleur choix d'ailleurs
+cat /home/$USER/.bash_history | sort | uniq -c | sort -rn | head -n 5 > aliasTips  
+
+
+                                            
+## on affiche du texte dans le prompt                                     
+echo "programme> Top 5 de vos commandes les plus utilisées :), pensez à faire un alias !!"
+echo "programme>"
+
+
+
+## mapfile, également appelée (read array), est une commande du shell Bash utilisée pour lire des tableaux. Elle transforme  
+## les lignes de l'entrée standard dans une variable de type tableau. 
+mapfile -t  aliasTips ## mapfile est une commande 
+
+
+
+## boucle logique : Pour i dans le tableau isolé myArray[@] (@ = tous les arguments !) i aura comme première valeur la
+## première ligne retourné par ma première commande (celle qui commence par cat)
+for i in "${myArray[@]}"; do echo "programme> $line"; done

@@ -1,0 +1,26 @@
+Lister le contenu du répertoire /etc et envoyer le résultat dans un fichierls "etcResultat"
+	touch etcResultat.txt
+	ls /etc > etcResultat.txt
+
+Lister de manière détaillée le contenu du répertoire /etc et envoyer le résultat dans un fichier "etcResultat2".
+	touch etcResultat2.txt
+	ls -l /etc > etcResultat2.txt
+	ls -l
+ls -l -> affiche la taille, la date et l’heure de modification, le nom du fichier ou du répertoire, 
+le propriétaire du fichier et son autorisation
+
+Le fichiers nommés "passwd" est-il présent dans /etc, envoyer le résultat dans un fichier "passwdResultat"
+	cd /etc
+	cat passwd > passwdResultat.txt
+
+Lister le contenu du répertoire /dev avec ces fichiers cachés et envoyer le résultat dans un fichier "cachéDev"
+	cd /dev
+	ls -a > cachéDev.txt
+
+Lister le contenu du fichier /etc/shadow sans la 2 ème colonne et envoyer le résultat dans un fichier "secretMotDePasse".
+	cd /etc
+	cat /etc/shadow 
+	cut -f 1,3,4,5,6 -d : /etc/shadow > secretMotPasse.txt
+
+Lister les 6 premiers caractères du fichier /etc/passwd et envoyer le résultat à la suite du fichier "secretMotDePasse".
+	cut -c1-6 /etc/passwd > secretMotPasse.txt

@@ -1,0 +1,31 @@
+ls -l /dev/sd* -> afficher la liste de disques
+fdisk -l /dev/sda (gdisk -l /dev/sda) -> info sur le disque (GPT)
+
+partitionnement :
+n -> nouvelle partition
+p -> afficher, print
+w -> enregistrer, écrire sur le disque
+
+formatage :
+mkfs -t ext4 /dev/sdb1 -> mkfs permet de créer un système de fichier en ext4 et le fichier device 
+qu'on veut formater
+
+montage : 
+mkdir -p /mnt/mes_donnees
+mount -t ext4 /dev/sdb1 /mnt/mes_donnees
+
+!!! MONTAGE AUTOMATIQUE AU DEMARRAGE DU SYSTEME :
+si vous souhaitez que le montage se fasse au demarrage du système il faut modifier le fichier 
+/etc/fstab
+pour récupérer UUID
+blkid | taile -n 2 ou
+blkid | grep >> nano /etc/fstab
+mount -a
+
+mount -> afficher la liste de tous les périphériques montés
+mount | grep ^/dev/sd -> afficher que les disques montés
+
+sous Windows, les disques durs, lecteur cd et autres périphériques de stockage sont identifiés 
+par une lettre.
+Sous Linux, la racine de notre arborescence se nomme  /  puis on trouve des dossiers,
+ des sous-dossiers, des sous-sous-dossiers

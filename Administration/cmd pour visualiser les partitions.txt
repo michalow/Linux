@@ -1,0 +1,2 @@
+La commande « fdisk –l » permettra de voir les disques et partitions du système 
+et donc de voir ceux non utilisés ou ceux qui viennent d’être ajoutés

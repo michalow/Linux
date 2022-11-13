@@ -1,0 +1,5 @@
+laissez la valeur par défaut pour le premier secteur 
+(il s'agit de l'endroit où la partition commencera sur le disque dur)
+et indiquez la taille souhaitée pour la valeur "Dernier secteur". 
+La taille peut être indiquée en Ko, en Mo ou en Go, mais doit être précédée du caractère
+ : +

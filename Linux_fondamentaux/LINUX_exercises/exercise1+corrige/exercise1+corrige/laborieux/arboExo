@@ -1,0 +1,21 @@
+├── bdc
+│   └── ressource
+│       └── composants
+│          └── virtualenv
+├── dist
+├── html
+│   ├── blob_storage
+│   │   └── 20220811T124904
+│   │       └── exthost1
+│   ├── mypython
+│   │   └── bin
+│   ├── node_modules
+│   │   └── bootstrap-autocomplete
+│   ├── pages
+│   └── scraping
+│       └── bin
+└── Work
+    ├── exercise
+    │   └── tibo
+    │       └── attach
+    └── planIP

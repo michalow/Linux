@@ -1,0 +1,13 @@
+Exercice utilisateurs:
+[15:06]
+Créer 2 utilisateurs :
+Toto et Titi
+[15:06]
+Créer 1 groupe travail
+[15:06]
+Créer un dossier travail dans /home
+[15:07]
+Le propriétaire de ce dossier doit être root, le groupe est travail
+[15:07]
+Toto et Titi doivent pouvoir lire et écrire dans ce dossier 
+Les autres utilisateurs n'ont aucun droit sur ce dossier

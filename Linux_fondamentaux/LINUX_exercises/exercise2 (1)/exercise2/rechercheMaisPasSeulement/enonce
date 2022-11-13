@@ -1,0 +1,8 @@
+Rechercher tous les fichiers enonce depuis le dossier parrent.
+et afficher les uns à la suites des autres sans consigne d'ordre particulier
+
+find . | sort
+
+Ensuite comment pouvez-vous utiliser sort pour trier les enoncés dans l'ordre de votre choix
+
+

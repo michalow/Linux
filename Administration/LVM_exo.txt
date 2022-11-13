@@ -1,0 +1,36 @@
+ Déclarer vos 4 volumes physiques
+            Créer 2 groupes de volumes
+            Ajouté 2 disque par groupe
+            Créer 2 volumes logiques  pour le premier groupe   (1: 15G; 2: 25G):
+                data
+                temp
+            Pour le 2ème volume  :
+                3 volumes logiques  (1: 10G; 2: 10G; 3: 10G):
+                    production
+                    preprod
+                    deve (modifié)
+
+la partition (format de fichier) pour mettre le système de fichiers
+hardware storage - stockage sur le disque dur
+avec LVM on fait la partition sur LV logical volume (la 3ème couche de LVM, pv, gv,lv)
+
+fdisk -l /dev/sda
+
+df -h (partition ou point de montage)
+watch df -h
+
+lvmdiskscan
+
+pvdisplay
+pvscan (pvs)
+pvchange -x n /dev/sda1
+pvresize --setphysicalvolumesize 140G /dev/sda1
+pvmove /dev/sda1
+pvremove /dev/sda1
+
+vgs
+vgextend nom_group /dev/sda (disque)
+
+lvs (lvscan)
+lvrename
+vvextend -l +100%FREE /dev/vg1/lv1

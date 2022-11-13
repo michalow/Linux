@@ -1,0 +1,55 @@
+1-
+
+        Ecrivez votre premier script :  1script
+                Quands vous le lancez il doit retourner :
+                        Hello World !
+
+
+2- 
+        Ecrivez votre second script :   2script
+                Qaunds vous le lancez il doit retourner:
+                        Hello World ?
+
+3-
+        Ecrivez votre troisième script : 3script
+                Quands vous le lancez il doit vous retourner:
+Hello
+Quel est votre prénom ?
+                        >
+                 Le script doit attendre le retour de l'utilisateur et ensuite le retourner, ex:
+                        programe> Hello
+                        programe> Quel est votre prénom ?
+                        utilisateur> prenom
+                        programe> Bonjour prenom
+
+4- 
+        Ecrivez votre quatrième script : 4script
+                Quands vous le lancez il doit vous retourner:
+Hello
+Quel est votre prénom ?
+                        >
+                 Le script doit attendre le retour de l'utilisateur et ensuite le retourner, ex:
+                        programe> Hello
+                        programe> Quel est votre prénom ?
+                        utilisateur> prenom
+                        programe> Bonjour prenom
+
+                Ensuite : Le script vous demande si vous voullez continuer de parler avec lui
+                        programe> Vous voullez qu'on continue ? (O:oui, N:non)
+
+
+X- 
+  Ecrivez votre  script X :   Xscript.sh
+                Quand vous le lancez il doit retourner, le nombre de mot clé et leur occurence du contenu du fichier .bash_histrory dans votre ~  (profil utilisateur):
+            programme> Top 5 de vos commandes les plus utilisées :), pensez à faire un alias !!
+cat .bash_history | cut -d " " -f1 | sort | uniq -c | sort -nr | head -n5
+alias top5
+            programme> 1: ls
+            programme> 2: cat
+            programme> 3: nano 
+            programme> 4: cd
+            programme> 5: vi
+ (modifié)
+NOUVEAU
+
+

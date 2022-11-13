@@ -1,0 +1,4 @@
+création pv, gv, lv
+formatage lv
+mkdir <point de montage> répertoire
+montage /répertoire

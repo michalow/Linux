@@ -1,0 +1,5 @@
+cp contenu d'un fichier et envoyer dans le dossier "script"
+le rendre executable
+ouvrir avec l'editeur de texte nano à la ligne 8
+fichier XscriptBIS.sh
+cp template.sh script | chmod ugo+x /home/vboxuser/template.sh | nano template.sh

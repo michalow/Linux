@@ -1,0 +1,10 @@
+Vous devez faire en sorte que la commande diff osecours et testeOsecours ne retourne rien dans stout(1) ou sterr(2)
+Vous avez plusieurs façon de le faire.
+Vous devez m'appelez une fois réussi, je me donne le droit de valider ou refuser le resultat en fonction de votre méthode.
+
+ressource:
+man 
+google
+diapo 121
+
++ supp si vous avez utilisé la commande tr

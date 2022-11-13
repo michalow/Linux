@@ -1,0 +1,6 @@
+Lister le contenu du répertoire /etc et envoyer le résultat dans un fichier "etcResultat"
+Lister de manière détaillée le contenu du répertoire /etc et envoyer le résultat dans un fichier "etcResultat2".
+Le fichiers nommés "passwd" est-il présent dans /etc, envoyer le résultat dans un fichier "passwdResultat"
+Lister le contenu du répertoire /dev avec ces fichiers cachés et envoyer le résultat dans un fichier "cachéDev"
+Lister le contenu du fichier /etc/shadow sans la 2 ème collone et envoyer le résultat dans un fichier "secretMotDePasse".
+Lister les 6 premiers caractères du fichier /etc/passwd et envoyer le résultat à la suite du fichier "secretMotDePasse".

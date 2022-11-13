@@ -1,0 +1,50 @@
+Sur virtual box :
+    Créer une nouvelle vm avec UEFI:
+            1er disque :
+                60GO
+            2eme disque :
+                30 GO
+    Installer debian depuis l'iso debian 11 netinstall sur le premier disque
+            Vous devez lors de l'installation (en premier lieu faire un instantané à l'étape des partitions):
+                    Partager le premier disque comme ceci :
+                        / - 50 %
+                        boot 4%
+                        home 5%
+                        tmp  5%
+                        usr  4%
+                        var  5%
+                        srv  4%
+                        opt  4%
+                        usr/local  4%
+
+            Ne toucher pas au deuxième disque pour l'instant.
+
+
+***
+
+Ne pas oublier grub !
+Systèmes de fichiers ext4
+Exo 2
+
+
+Une fois votre os démaré :
+        via fdisk et mkfs
+            séparé le 2 ème disque en 3 partition +ou- égale entre elle :
+                les monté à la racine en :
+                    /lecture
+                    /ecriture
+                    /noexec
+
+                Créer 1 fichier avec en contenu dans /lecture :
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+                Créer 1 fichier vide dans /ecriture:
+
+                Créer un script qui affiche hello world dans /noexec
+
+
+
+                Ensuite vous devez faire en sorte que :
+                    seule la lecture soit possible dans /lecture
+                    seule l'écriture soit possible dans /ecriture
+                    Que l'éxecution ne soit pas possible dans /noexec
